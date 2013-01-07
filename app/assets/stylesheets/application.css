@@ -11,3 +11,21 @@
  *= require_self
  *= require_tree .
  */
+
+div.field span.radio {
+    margin-right: 10px;
+}
+
+div.show_student_info {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+span.student_name {
+
+}
+
+span.student_period {
+    color: #6D6968
+
+}

@@ -1,6 +1,8 @@
 ParticipationPoints::Application.routes.draw do
 
-  resources :students, :only => [:create]
+  resources :students, :only => [:create, :new, :show]
+
+  root :to => 'pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
