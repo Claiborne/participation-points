@@ -13,4 +13,24 @@ class StudentsController < ApplicationController
     @student = Student.find params[:id]
   end
 
+  def period1
+    @students = Student.find_by_period '1'
+  end
+
+  def period2
+    @students = Student.find_by_period '2'
+  end
+
+  def period3
+    @students = Student.find_by_period '3'
+  end
+
+  def period4
+    @students = Student.find_by_period '4'
+  end
+
+  def period_yb
+    @students = Student.find_by_period 'YB'
+  end
+
 end

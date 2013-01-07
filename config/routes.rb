@@ -4,6 +4,12 @@ ParticipationPoints::Application.routes.draw do
 
   root :to => 'pages#home'
 
+  match '/period1', :to => 'students#period1'
+  match '/period2', :to => 'students#period2'
+  match '/period3', :to => 'students#period3'
+  match '/period4', :to => 'students#period4'
+  match '/period_yb', :to => 'students#period_yb'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
