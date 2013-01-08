@@ -1,3 +1,10 @@
+<% @students.sort! { |a,b| a.name <=> b.name} %>
 <% @students.each do |s|%>
-  <%= s.name %><br />
+  <div class='student_list'>
+    <%= s.name %>
+    <span class='student_edit_link'>
+    <%= link_to 'View/Edit', student_path(s) %>
+    </span>
+    <br />
+  </div>
 <% end %>

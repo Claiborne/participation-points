@@ -29,3 +29,18 @@ span.student_period {
     color: #6D6968
 
 }
+
+span.student_edit_link a {
+    color: blue;
+    font-size: 70%;
+}
+
+span.student_edit_link a:visited {
+    color: blue;
+}
+
+
+div.student_list {
+    font-size: 150%;
+    margin-bottom: 5px;
+}
