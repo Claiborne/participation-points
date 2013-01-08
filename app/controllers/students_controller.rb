@@ -2,7 +2,12 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.create params[:student]
-    redirect_to '/students/new'
+    if @student.save
+      redirect_to '/students/new'
+      # TODO flash[:success] = 'Student successfully added. Add another?'
+    else
+      render 'new'
+    end
   end
 
   def new
