@@ -34,9 +34,12 @@ span.student_period {
 
 }
 
+span.student_edit_link {
+    font-size: 70%;
+}
+
 span.student_edit_link a {
     color: blue;
-    font-size: 70%;
 }
 
 span.student_edit_link a:visited {
