@@ -1,6 +1,9 @@
 ParticipationPoints::Application.routes.draw do
 
-  resources :students, :only => [:create, :new, :show]
+  match '/students/increase', :to => 'students#increase'
+  match '/students/decrease', :to => 'students#decrease'
+
+  resources :students, :only => [:create, :new, :show, :edit]
 
   root :to => 'pages#home'
 
@@ -9,6 +12,7 @@ ParticipationPoints::Application.routes.draw do
   match '/period3', :to => 'students#period3'
   match '/period4', :to => 'students#period4'
   match '/period_yb', :to => 'students#period_yb'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

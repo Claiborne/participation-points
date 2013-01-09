@@ -44,4 +44,16 @@ class StudentsController < ApplicationController
     @period = 'YB'
   end
 
+  def increase
+    s = Student.find params[:id]
+    s.update_attribute(params[:attr], s.send(params[:attr])+1)
+    redirect_to student_path params[:id]
+  end
+
+  def decrease
+    s = Student.find params[:id]
+    s.update_attribute(params[:attr], s.send(params[:attr])-1)
+    redirect_to student_path params[:id]
+  end
+
 end

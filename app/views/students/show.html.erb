@@ -10,12 +10,25 @@
   </div>
 </p>
 <br />
-<span class="badge badge-success"><%= @student.answered %></span> Answered question and put effort
+
+<% msg = 'Are you sure you want to subtract one point?' %>
+
+<span class="badge badge-success"><%= @student.answered %></span><strong> Answered question and put effort | </strong>
+<%= link_to "+", {:controller => :students, :action => 'increase', :id => @student.id, :attr => :answered}, :class => 'btn btn-success btn-small' %>
+<%= link_to "-", {:controller => :students, :action => 'decrease', :id => @student.id, :attr => :answered}, :class => 'btn btn-danger btn-small', :confirm => msg %>
 <br /><br />
-<span class="badge badge-important"><%= @student.not_answered %></span> Did not answer question or put in effort
+<span class="badge badge-important"><%= @student.not_answered %></span><strong> Did not answer question or put in effort | </strong>
+<%= link_to "+", {:controller => :students, :action => 'increase', :id => @student.id, :attr => :not_answered}, :class => 'btn btn-success btn-small' %>
+<%= link_to "-", {:controller => :students, :action => 'decrease', :id => @student.id, :attr => :not_answered}, :class => 'btn btn-danger btn-small', :confirm => msg %>
 <br /><br />
-<span class="badge badge-success"><%= @student.teams %></span> Worked well in teams. Communicated effectively
+<span class="badge badge-success"><%= @student.teams %></span><strong> Worked well in teams. Communicated effectively | </strong>
+<%= link_to "+", {:controller => :students, :action => 'increase', :id => @student.id, :attr => :teams}, :class => 'btn btn-success btn-small' %>
+<%= link_to "-", {:controller => :students, :action => 'decrease', :id => @student.id, :attr => :teams}, :class => 'btn btn-danger btn-small', :confirm => msg %>
 <br /><br />
-<span class="badge badge-important"><%= @student.not_teams %></span> Did not work well in teams or effectively
+<span class="badge badge-important"><%= @student.not_teams %></span><strong> Did not work well in teams or effectively | </strong>
+<%= link_to "+", {:controller => :students, :action => 'increase', :id => @student.id, :attr => :not_teams}, :class => 'btn btn-success btn-small' %>
+<%= link_to "-", {:controller => :students, :action => 'decrease', :id => @student.id, :attr => :not_teams}, :class => 'btn btn-danger btn-small', :confirm => msg %>
 <br /><br />
-<span class="badge badge-success"><%= @student.volunteered %></span> Volunteered answers and contributed to classroom discussion
+<span class="badge badge-success"><%= @student.volunteered %></span><strong> Volunteered answers and contributed to classroom discussion | </strong>
+<%= link_to "+", {:controller => :students, :action => 'increase', :id => @student.id, :attr => :volunteered}, :class => 'btn btn-success btn-small' %>
+<%= link_to "-", {:controller => :students, :action => 'decrease', :id => @student.id, :attr => :volunteered}, :class => 'btn btn-danger btn-small', :confirm => msg %>

@@ -1,10 +1,25 @@
+<div style="float: right">
+<p>Key:</p>
+<p>Answered question and put effort <span class="badge badge-success">1</span></p>
+<p>Did not answer question or put in effort <span class="badge badge-important">1</span></p>
+<p>Worked well in teams. Communicated effectively <span class="badge badge-info">1</span> </p>
+<p>Did not work well in teams or effectively <span class="badge badge-warning">1</span> </p>
+<p>Volunteered answers and contributed to classroom discussion <span class="badge">1</span> </p>
+</div>
+
 <% @students.sort! { |a,b| a.name <=> b.name} %>
 <% @students.each do |s|%>
   <div class='student_list'>
     <%= s.name %>
     <span class='student_edit_link'>
-    <%= link_to 'View/Edit', student_path(s) %>
+        <%= link_to 'View/Edit', student_path(s) %>
     </span>
-    <br />
+    <p>
+        <span class="badge badge-success"><%= s.answered %></span>
+        <span class="badge badge-important"><%= s.not_answered %></span>
+        <span class="badge badge-info"><%= s.teams %></span>
+        <span class="badge badge-warning"><%= s.not_teams %></span>
+        <span class="badge"><%= s.volunteered %></span>
+    </p>
   </div>
 <% end %>
