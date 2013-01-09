@@ -1,3 +1,14 @@
+
+
+<%= @students[rand(@students.count)].name %>
+
+<button class='btn btn-primary btn-large'>Random Student</button>
+
+
+
+
+
+
 <% @students.sort! { |a,b| a.name <=> b.name} %>
 <% @students.each do |s|%>
   <div class='student_list'>
