@@ -1,3 +1,4 @@
+<%= render 'random_button' %>
 <p>
   <div class='show_student_info'>
     <span class='student_name'>
@@ -8,3 +9,13 @@
     </span>
   </div>
 </p>
+<br />
+<span class="badge badge-success"><%= @student.answered %></span> Answered question and put effort
+<br /><br />
+<span class="badge badge-important"><%= @student.not_answered %></span> Did not answer question or put in effort
+<br /><br />
+<span class="badge badge-success"><%= @student.teams %></span> Worked well in teams. Communicated effectively
+<br /><br />
+<span class="badge badge-important"><%= @student.not_teams %></span> Did not work well in teams or effectively
+<br /><br />
+<span class="badge badge-success"><%= @student.volunteered %></span> Volunteered answers and contributed to classroom discussion

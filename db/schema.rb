@@ -11,18 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130107164021) do
+ActiveRecord::Schema.define(:version => 20130109070546) do
 
   create_table "students", :force => true do |t|
     t.string   "name"
-    t.integer  "answered"
-    t.integer  "teams"
-    t.integer  "volunteered"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "answered",     :default => 0
+    t.integer  "teams",        :default => 0
+    t.integer  "volunteered",  :default => 0
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.string   "period"
-    t.integer  "not_answered"
-    t.integer  "not_teams"
+    t.integer  "not_answered", :default => 0
+    t.integer  "not_teams",    :default => 0
   end
 
 end

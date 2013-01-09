@@ -13,7 +13,9 @@
     <%= render 'layouts/header' %>
 
     <% flash.each do |k,v| %>
-      <div class="flash <%= k %>"><%= v %></div>
+      <strong>
+        <div class="alert alert-<%= k == :success ? "success" : "error" %>"><%= v %></div>
+      </strong>
     <% end %>
 
     <div class='container'>

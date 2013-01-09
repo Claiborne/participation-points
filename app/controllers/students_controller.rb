@@ -16,6 +16,7 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find params[:id]
+    @students = Student.find_all_by_period @student.period
   end
 
   def period1

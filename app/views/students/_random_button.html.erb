@@ -1,0 +1,14 @@
+<% if @students.count > 0 %>
+
+    <% student_id = @students[rand(@students.count)].id  %>
+
+    <%= button_to "Pick a random student", student_path(student_id), :method => 'get', :class => 'btn btn-primary btn-large' %>
+    <br />
+
+<% else %>
+
+    <strong>No students added<br />
+    Go  <%= link_to 'HERE', new_student_path  %> to add students to this period</strong>
+
+<% end %>
+
