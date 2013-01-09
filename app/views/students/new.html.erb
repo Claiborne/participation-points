@@ -1,23 +1,24 @@
 <h1>Add a new student</h1>
-
+<br />
 <%= form_for(@student) do |f| %>
 
     <%= render 'error_messages', :object => f.object %>
 
     <div class='field'>
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
+      <%= f.label :name %>
+      <%= f.text_field :name, :placeholder => "Student's name..." %>
     </div>
-    <br />
     <div class='field'>
-      <%= f.label :period %><br />
+      <%= f.label :period %>
       <% %w(1 2 3 4 YB).each do |n| %>
-          <span class='radio'><%= n.to_s %><%= f.radio_button(:period, n) %></span>
+        <label class='radio inline'>
+          <%= n.to_s %><%= f.radio_button(:period, n) %>
+        </label>
       <% end %>
     </div>
     <br />
     <div class='actions'>
-      <%= f.submit 'Add' %>
+      <%= f.button 'Add Student', :class => 'btn btn-primary' %>
     </div>
 
 <% end %>
