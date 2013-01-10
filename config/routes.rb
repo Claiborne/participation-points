@@ -1,7 +1,7 @@
 ParticipationPoints::Application.routes.draw do
 
-  match '/students/increase', :to => 'students#increase'
-  match '/students/decrease', :to => 'students#decrease'
+  get '/students/increase', :to => 'students#increase'
+  get '/students/decrease', :to => 'students#decrease'
 
   resources :students, :only => [:create, :new, :show, :edit]
 

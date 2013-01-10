@@ -19,6 +19,10 @@ class StudentsController < ApplicationController
     @students = Student.find_all_by_period @student.period
   end
 
+  def edit
+
+  end
+
   def period1
     @students = Student.find_all_by_period '1'
     @period = '1'
