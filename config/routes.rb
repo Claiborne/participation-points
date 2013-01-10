@@ -13,6 +13,8 @@ ParticipationPoints::Application.routes.draw do
   match '/period4', :to => 'students#period4'
   match '/period_yb', :to => 'students#period_yb'
 
+  match '/signin', :to => 'pages#signin'
+  post '/students/sign_in', :to => 'students#sign_in'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

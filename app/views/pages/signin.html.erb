@@ -1,0 +1,4 @@
+<%= form_tag('/students/sign_in') do %>
+    <%= text_field_tag 'secret', nil, :placeholder => 'Secret?' %><br />
+    <%= submit_tag 'submit', :class => 'btn btn-primary'%>
+<% end %>

@@ -1,5 +1,9 @@
 class StudentsController < ApplicationController
 
+  include StudentsHelper
+
+  before_filter :authenticate, :except => 'sign_in'
+
   def create
     @student = Student.create params[:student]
     if @student.save
@@ -76,5 +80,20 @@ class StudentsController < ApplicationController
     s.update_attribute(params[:attr], s.send(params[:attr])-1)
     redirect_to student_path params[:id]
   end
+
+  def sign_in
+    if params[:secret] == secret
+      cookies.permanent[:okusa] = 'yep'
+      redirect_to root_path
+    else
+      redirect_to signin_path, :notice => "That's not the secret..."
+    end
+  end
+
+  private
+
+    def authenticate
+      deny_access unless signed_in?
+    end
 
 end
