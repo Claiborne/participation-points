@@ -32,6 +32,14 @@ class StudentsController < ApplicationController
     end
   end
 
+  def destroy
+    student = Student.find(params[:id])
+    period = student.period
+    student.delete
+    #flash[:success] = 'User deleted'
+    redirect_to "/period#{period}"
+  end
+
   def period1
     @students = Student.find_all_by_period '1'
     @period = '1'

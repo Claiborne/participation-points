@@ -14,8 +14,17 @@
           </label>
       <% end %>
     </div>
+    <br />
     <div class='actions'>
-      <%= f.submit 'Update' %>
+      <%= f.submit 'Update', :class => 'btn btn-primary' %>
     </div>
+
+    <% 5.times do %>
+    <br />
+    <% end %>
+
+    <% msg = 'Are you sure you want to delete this student?' %>
+
+    <%= link_to "Delete student", @student, method: :delete, data: { confirm: msg }, :class => 'btn btn-danger btn-small' %>
 
 <% end %>

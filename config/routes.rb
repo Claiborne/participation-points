@@ -3,7 +3,7 @@ ParticipationPoints::Application.routes.draw do
   get '/students/increase', :to => 'students#increase'
   get '/students/decrease', :to => 'students#decrease'
 
-  resources :students, :only => [:create, :new, :show, :edit, :update]
+  resources :students, :only => [:create, :new, :show, :edit, :update, :destroy]
 
   root :to => 'pages#home'
 
