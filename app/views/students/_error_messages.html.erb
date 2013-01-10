@@ -1,9 +1,7 @@
 <% if @student.errors.any? %>
-    <div id='error_explanation'>
-      <ul>
+    <div class='alert'>
         <% object.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+            <strong>Oh snap: </strong><%= msg.downcase %><br />
         <% end %>
-      </ul>
     </div>
 <% end %>
