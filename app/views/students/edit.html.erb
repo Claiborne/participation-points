@@ -1,0 +1,21 @@
+<%= render 'display_student' %>
+
+<%= form_for(@student) do |f| %>
+
+    <div class='field'>
+      <%= f.label :name, 'Change name' %>
+      <%= f.text_field :name %>
+    </div>
+    <div class='field'>
+      <%= f.label :period, 'Change period' %>
+      <% %w(1 2 3 4 YB).each do |n| %>
+          <label class='radio inline'>
+            <%= n.to_s %><%= f.radio_button(:period, n) %>
+          </label>
+      <% end %>
+    </div>
+    <div class='actions'>
+      <%= f.submit 'Update' %>
+    </div>
+
+<% end %>
