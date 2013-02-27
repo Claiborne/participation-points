@@ -1,9 +1,7 @@
 namespace :student do
-  desc "import students from files to database"
+  desc "import students to database"
   task :import => :environment do
-    file = File.open("/Users/wclaiborne/Desktop/students.txt")
-    file.each do |line|
-      Student.create :name => line.to_s, :period => '1'
-    end
+    # TODO List of Student Names
+    Student.create :name => name, :period => '1'
   end
 end
